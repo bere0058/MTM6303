@@ -1,9 +1,9 @@
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="{{ section.settings.card_image | image_url: width: 500 }}" alt="{{section.settings.card_image.alt}}">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">{{ section.settings.card_title}}</h5>
+    <p class="card-text">{{ section.settings.card_text}}</p>
+    <a href="{{ section.settings.button_link}}" class="btn btn-primary">{{ section.settings.button_link_name}}</a>
   </div>
 </div>
 <style>
@@ -16,10 +16,33 @@
     "name": "Bootstrap Card",
     "tag": "section",
     "settings": [
+		{
+  			"type": "text",
+  			"id": "card_title",
+  			"label": "Heading",
+  			"default": "Card title"
+		},
+		{
+            "type": "image_picker",
+            "id": "card_image",
+            "label": "Card Image"
+        },
+		{
+  			"type": "textarea",
+  			"id": "card_text",
+  			"label": "Body",
+  			"default": "Some quick example text to build on the card title and make up the bulk of the card's content."
+		},
         {
-          "type": "image_picker",
-          "id": "card_image",
-          "label": "Card Image"
+            "type": "text",
+            "id": "button_link_name",
+            "label": "Button link name",
+			"default": "Go somewhere"
+        },
+		{
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
         },
         {
             "type": "color",
