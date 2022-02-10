@@ -1,0 +1,9 @@
+#jstimer {
+	padding: 4%;
+}
+#jstimer > #clockdiv {
+	background-color: var(--shopify-editor-setting-color_text);
+    color: white;
+    display: flex;
+    width: min-content;
+}
