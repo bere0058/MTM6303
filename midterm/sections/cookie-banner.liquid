@@ -1,0 +1,64 @@
+<div class="alert alert-warning fade show flex-column position-fixed position-absolute top-50 start-50 translate-middle" role="alert">
+  <strong class="text-center">{{ section.settings.banner-title }}</strong>{{ section.settings.banner-text }}
+  <div type="button" class="text-center" aria-label="Close" data-bs-dismiss="alert"><a href={{ section.settings.dismiss-url }} type="link" target="_blank">Decline</a></div>
+  <button type="button" class="" data-bs-dismiss="alert" aria-label="Close">Accept</button>
+</div>
+<style>
+.show {
+	display: flex !important;
+  	z-index: 2;
+}
+.alert {
+        background : {{ section.settings.background-color }};
+          color:{{ section.settings.font-color }};
+    }
+</style>  
+{% schema %}
+  {
+    "name": "Cookie Banner",
+    "tag": "section",
+    "class": "index-section--flush",
+    "settings": [
+        {
+            "id": "banner-title",
+            "type": "text",
+            "label": "Banner Title",
+            "default": "Cookies Settings"
+        },
+		{
+            "id": "banner-text",
+            "type": "text",
+            "label": "Banner Text",
+            "default": "We use cookies for better performance"
+        },
+		{
+            "id": "dismiss-url",
+            "type": "text",
+            "label": "Dismiss URL",
+            "default": "https://allaboutdnt.com/"
+        },
+        {
+            "type": "color",
+            "id": "background-color",
+            "label": "Background Color",
+            "default": "#fff3cd"
+        },
+        {
+            "type": "color",
+            "id": "font-color",
+            "label": "Font Color",
+            "default": "#664d03"
+        }
+    ],
+    "presets": [{
+        "name": "Cookie Banner",
+        "category": "Custom"
+    }]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
